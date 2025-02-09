@@ -8,7 +8,7 @@ import { IngestionComponent } from './ingestion/ingestion.component';
 import { UserManagementComponent } from './user-management/user-management.component';
 
 export const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/signup', pathMatch: 'full' },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
   { path: 'dashboard', component: DashboardComponent },
