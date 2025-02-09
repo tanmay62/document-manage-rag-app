@@ -1,59 +1,9 @@
-# DocMgmtApp
-
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.5.
-
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Documentation for Angular Project for Document Management App -
+Initially install all libraries viz bootstrap, angular forms etc. for frontend and for backend install express,fs,path,cors,multer. Backend is done using Node.js with mock service.
+Then run the project using ng serve command.
+First signup page will appear as per routes provide appropriate username, email id and password also confirm password and then signup.
+After that you will be redirected to login. Both pages viz. signup and login have redirection link to each at the bottom of form container.
+Then login via credentials you signed up with. 
+If they are correct, you will redirected to user dashboard where there are multiple actions for user such as document upload and ingestion process. Also there is QnA section to ask questions and get answers.
+For now, the QnA functionality is based on Mock Api service which as MockQnA json with respective content and if keywords are relevant, respective description is provided and also the respective document where it is present in mock json is displayed.
+For document upload, you can upload documents of any type and then see them in the list below the upload button. Also there are two actions View and Delete to view the respective document in new tab and delete to delete the respective document for respective user.
