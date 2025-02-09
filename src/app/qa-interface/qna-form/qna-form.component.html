@@ -1,0 +1,63 @@
+<div class="container d-flex flex-column align-items-center justify-content-center vh-100">
+  <div class="card p-4 shadow-lg border-0" style="max-width: 600px; width: 100%;">
+    <h2 class="text-center mb-3 text-primary">
+      <i class="bi bi-chat-dots-fill"></i> Q&A Interface
+    </h2>
+
+    <!-- User Greeting -->
+    <div *ngIf="userName" class="alert alert-secondary text-center">
+      Welcome, <strong>{{ userName }}</strong>! Ask your question below.
+    </div>
+
+    <!-- Question Form -->
+    <form (ngSubmit)="submitQuestion($event)" class="needs-validation" novalidate>
+      <div class="mb-3">
+        <label for="question" class="form-label fw-bold">Ask a Question:</label>
+        <div class="input-group">
+          <span class="input-group-text"><i class="bi bi-question-circle"></i></span>
+          <input
+            type="text"
+            id="question"
+            class="form-control"
+            [(ngModel)]="question"
+            name="question"
+            required
+            placeholder="Type your question here..."
+          />
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary w-50 d-block mx-auto">
+        <i class="bi bi-search"></i> Submit Question
+      </button>
+    </form>
+
+    <!-- Loading Indicator -->
+    <div *ngIf="isLoading" class="text-center mt-4">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+      <p class="text-muted mt-2">Searching for answers...</p>
+    </div>
+
+    <!-- Answer Display -->
+    <div *ngIf="answer && !isLoading" class="mt-4">
+      <h4 class="text-success"><i class="bi bi-lightbulb-fill"></i> Answer:</h4>
+      <p class="alert alert-success">
+        {{ answer }}
+      </p>
+    </div>
+
+    <!-- Relevant Document Excerpt -->
+    <div *ngIf="documentExcerpt && !isLoading" class="mt-3">
+      <h4 class="text-info"><i class="bi bi-file-earmark-text"></i> Relevant Document:</h4>
+      <p class="alert alert-light border border-info">
+        {{ documentExcerpt }}
+      </p>
+    </div>
+    <br/><br/>
+    <a class="btn btn-primary w-50 d-block mx-auto" [routerLink]="['/dashboard']"
+      [queryParams]="{ user: userName }">
+        <i class="bi"></i> Go to dashboard
+      </a>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="container d-flex justify-content-center align-items-center vh-100">
+  <div class="col-md-8 col-lg-6">
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h2 class="card-title text-center mb-4">Document Upload & Management</h2>
+
+        <form (submit)="uploadDocument($event)">
+          <div class="mb-3">
+            <label for="document" class="form-label fw-bold">Select Document:</label>
+            <input type="file" id="document" class="form-control" required (change)="onFileSelected($event)" />
+          </div>
+          <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-primary w-50">
+              <i class="bi bi-cloud-upload"></i> Upload Document
+            </button>
+            <a class="btn btn-secondary w-50 text-center" [routerLink]="['/dashboard']" [queryParams]="{ user: username }">
+              <i class="bi bi-arrow-left-circle"></i> Go to Dashboard
+            </a>
+          </div>
+        </form>
+
+        <!-- Display Uploaded Documents -->
+        <div class="mt-4" *ngIf="uploadedDocuments.length > 0">
+          <h5 class="text-center fw-bold">Uploaded Documents</h5>
+          <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center" *ngFor="let doc of uploadedDocuments; let i = index">
+              <span>{{ doc.name }}</span>
+              <div>
+                <button class="btn btn-success btn-sm me-2" (click)="viewDocument(doc)">
+                  <i class="bi bi-eye"></i> View
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="deleteDocument(doc.id)">
+                  <i class="bi bi-trash"></i> Delete
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

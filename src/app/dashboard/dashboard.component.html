@@ -1,0 +1,75 @@
+<div class="container mt-4">
+  <!-- Dashboard Header -->
+  <div class="text-center mb-4">
+    <h1 class="fw-bold">Welcome to the Dashboard</h1>
+    <p class="lead text-muted">Manage your documents, users, and monitor the ingestion process efficiently.</p>
+  </div>
+
+  <!-- User Overview Section -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-primary text-white">
+      <h2 class="mb-0">User Overview</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="fw-bold">{{ userName || 'Loading...' }}</h5>
+      <h6 class="text-muted">{{ userRole || 'Loading...' }}</h6>
+      <p class="mt-2">
+        Welcome back, <strong>{{ userName || 'User' }}</strong>! You have full access to manage documents and users.
+      </p>
+    </div>
+  </div>
+
+  <!-- Document Management Overview Section -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-secondary text-white">
+      <h2 class="mb-0">Document Management</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="fw-bold">Documents Uploaded</h5>
+      <p>You have uploaded <strong>{{ documentCount !== null ? documentCount : 'Loading...' }}</strong> documents.</p>
+      <a class="btn btn-outline-primary" [routerLink]="['/documents']"
+      [queryParams]="{ user: userName }">Manage Documents</a>
+    </div>
+  </div>
+
+  <!-- Ingestion Process Status Section -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-success text-white">
+      <h2 class="mb-0">Ingestion Status</h2>
+    </div>
+    <div class="card-body">
+      <h5 class="fw-bold">Current Status</h5>
+      <p>Status:
+        <strong
+          [ngClass]="{'text-success': ingestionStatus === 'Completed', 'text-warning': ingestionStatus === 'In Progress'}">
+          {{ ingestionStatus || 'Loading...' }}
+        </strong>
+      </p>
+      <a class="btn btn-outline-success" [routerLink]="['/ingestion']"
+      [queryParams]="{ user: userName }">View Ingestion Process</a>
+    </div>
+  </div>
+
+  <!-- Quick Actions Section -->
+  <div class="card shadow-sm mb-4">
+    <div class="card-header bg-info text-white">
+      <h3 class="mb-0">Quick Actions</h3>
+    </div>
+    <div class="card-body text-center">
+      <a class="btn btn-primary me-2" [routerLink]="['/documents']"
+      [queryParams]="{ user: userName }">
+        <i class="bi bi-upload"></i> Upload Document
+      </a>
+      <a class="btn btn-danger" routerLink="/users" *ngIf="userRole === 'Admin'">
+        <i class="bi bi-people"></i> Manage Users
+      </a>
+      <a class="btn btn-primary me-2" [routerLink]="['/qna']"
+      [queryParams]="{ user: userName }">
+        <i class="bi bi-people"></i> Ask Questions
+      </a>
+      <button class="btn btn-outline-dark" (click)="logout()">
+        <i class="bi bi-box-arrow-right"></i> Logout
+      </button>
+    </div>
+  </div>
+</div>

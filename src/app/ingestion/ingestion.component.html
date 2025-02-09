@@ -1,0 +1,30 @@
+<div class="container mt-4 text-center">
+  <h2>Document Ingestion</h2>
+  <p>Trigger the ingestion process and monitor the progress.</p>
+
+  <!-- Start Ingestion Button -->
+  <button
+    class="btn btn-primary d-flex align-items-center justify-content-center gap-2"
+    (click)="startIngestion()"
+    [disabled]="isProcessing()"
+  >
+    <i class="bi bi-cloud-upload"></i> Start Ingestion
+  </button>
+
+  <!-- Progress Bar -->
+  <div class="progress mt-3" *ngIf="isProcessing()" style="height: 20px;">
+    <div
+      class="progress-bar progress-bar-striped progress-bar-animated"
+      role="progressbar"
+      [style.width]="progress() + '%'"
+      [attr.aria-valuenow]="progress()"
+      aria-valuemin="0"
+      aria-valuemax="100"
+    >
+      {{ progress() }}%
+    </div>
+  </div>
+
+  <!-- Processing Status -->
+  <p class="mt-2 text-muted" *ngIf="isProcessing()">Processing: {{ progress() }}%</p>
+</div>

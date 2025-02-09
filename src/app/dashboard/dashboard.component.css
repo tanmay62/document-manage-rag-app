@@ -1,0 +1,15 @@
+.container {
+  max-width: 900px;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+.card-header {
+  font-weight: bold;
+}
+
+.btn {
+  min-width: 150px;
+}
