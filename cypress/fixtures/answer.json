@@ -1,0 +1,22 @@
+[
+  {
+    "question": "What is Angular?",
+    "answer": "Angular is a TypeScript-based web application framework developed by Google.",
+    "documentExcerpt": "Found in 'Angular Guide.pdf'."
+  },
+  {
+    "question": "What is TypeScript?",
+    "answer": "TypeScript is a superset of JavaScript that adds static typing and interfaces.",
+    "documentExcerpt": "Found in 'TypeScript Basics.docx'."
+  },
+  {
+    "question": "How does Dependency Injection work in Angular?",
+    "answer": "Dependency Injection (DI) in Angular allows components to receive services via providers.",
+    "documentExcerpt": "Found in 'Angular DI Explained.txt'."
+  },
+  {
+    "question": "What is a Service in Angular?",
+    "answer": "A Service in Angular is a class that provides reusable business logic and data handling.",
+    "documentExcerpt": "Found in 'Angular Services Overview.pdf'."
+  }
+]

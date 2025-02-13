@@ -1,0 +1,63 @@
+[
+  {
+    "username": "tanmay625",
+    "email": "tanmay625@gmail.com",
+    "password": "tanmay@625",
+    "uploadedDocuments": [
+      {
+        "id": 1739078958301,
+        "name": "product_list (25).pdf",
+        "url": "http://localhost:3000/uploads/1739078958274-product_list (25).pdf"
+      },
+      {
+        "id": 1739079083775,
+        "name": "product_list (19).pdf",
+        "url": "http://localhost:3000/uploads/1739079083684-product_list (19).pdf"
+      },
+      {
+        "id": 1739079172027,
+        "name": "product_list (6).pdf",
+        "url": "http://localhost:3000/uploads/1739079172023-product_list (6).pdf"
+      },
+      {
+        "id": 1739079766472,
+        "name": "product_list (4).pdf",
+        "url": "http://localhost:3000/uploads/1739079766468-product_list (4).pdf"
+      },
+      {
+        "id": 1739079815904,
+        "name": "product_list (7).pdf",
+        "url": "http://localhost:3000/uploads/1739079815900-product_list (7).pdf"
+      }
+    ]
+  },
+  {
+    "username": "mrin456",
+    "email": "mrin456@gmail.com",
+    "password": "mrin@4567",
+    "uploadedDocuments": [
+      {
+        "id": 1739113823187,
+        "name": "product_list (3).pdf",
+        "url": "http://localhost:3000/uploads/1739113823183-product_list_(3).pdf"
+      }
+    ]
+  },
+  {
+    "username": "tonystark459",
+    "email": "tonystark459@gmail.com",
+    "password": "tony@34567",
+    "uploadedDocuments": [
+      {
+        "id": 1739125260551,
+        "name": "product_list (18).pdf",
+        "url": "http://localhost:3000/uploads/1739125260545-product_list_(18).pdf"
+      }
+    ]
+  },
+  {
+    "username": "newuser",
+    "email": "newuser@example.com",
+    "password": "password123"
+  }
+]
